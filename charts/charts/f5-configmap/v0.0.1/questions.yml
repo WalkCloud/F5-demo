@@ -6,14 +6,14 @@ labels:
   io.rancher.certified: partner
 questions:
 - variable: configname
-  default: "f5-configmap"
+  default: "f5 configmap example"
   required: true
   description: "设置F5 Configmap名称"
   type: string
   label: Config F5 Configmap Name
   group: "F5负载均衡配置"
 - variable: vs_ip
-  default: "controller-default"
+  default: "Set Virtual Server IP"
   required: true
   description: "设置F5提供负载均衡的Virtual Server IP地址"
   type: string
