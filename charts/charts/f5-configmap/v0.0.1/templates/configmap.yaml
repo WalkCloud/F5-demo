@@ -1,0 +1,52 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ .Values.configname }}
+  labels:
+    f5type: virtual-server
+data:
+  schema: "f5schemadb://bigip-virtual-server_v0.1.7.json"
+  data: |-
+    {
+      "virtualServer": {
+        "frontend": {
+          "balance": "{{ .Values.lbmethod }}",
+          "mode": "{{ .Values.mode",
+          "partition": "{{ .Values.partiton }}",
+          "virtualAddress": {
+            "bindAddr": "{{ .Values.vs_ip }}",
+            "port": {{ .Valuses.vs_port }}
+          }
+        },
+        "backend": {
+          "serviceName": "{{ .Values.servicename }}",
+          "servicePort": {{ .Valuses.serviceport}},
+          {{- if (eq .Values.healthprotocol "gateway_icmp") }}
+          "healthMonitors": [{
+          "interval": 5,
+          "timeout": 16
+          }]
+          {{- else if (eq .Values.healthprotocol "tcp") }}
+          "healthMonitors": [{
+          "interval": 5,
+          "timeout": 16
+          }]
+          {{- else if (eq .Values.healthprotocol "http") }}
+          "healthMonitors": [{
+          "interval": 5,
+          "protocol": "http",
+          "send": "HEAD / HTTP/1.0\r\n\r\n",
+          "timeout": 16
+          }]
+          {{- else if (eq .Values.healthprotocol "https") }}
+          "healthMonitors": [{
+          "interval": 5,
+          "protocol": "http",
+          "send": "HEAD / HTTP/1.0\r\n\r\n",
+          "timeout": 16
+          }]
+          {{- end }}               
+        }
+      }
+    }
+
