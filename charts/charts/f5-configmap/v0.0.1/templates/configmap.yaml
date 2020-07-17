@@ -15,7 +15,7 @@ data:
           "partition": "{{ .Values.partiton }}",
           "virtualAddress": {
             "bindAddr": "{{ .Values.vsip }}",
-            "port": {{ .Valuses.vsport }}
+            "port": "{{ .Valuses.vsport }}"
           }
         },
         "backend": {
