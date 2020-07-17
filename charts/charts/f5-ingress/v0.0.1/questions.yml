@@ -104,15 +104,15 @@ questions:
   group: "Ingress基础配置"
 - variable: servicename
   default: ""
-  description: "设置代理和负载均衡的Ingress服务名称"
+  description: "设置需要绑定Ingress服务的工作负载的Service Name"
   type: string
   required: true
-  label: Config Ingress Service
+  label: Service Name
   group: "Ingress基础配置"
 - variable: serviceport
   default: "80"
   required: true
-  description: "设置访问Ingress服务端口"
+  description: "设置需要绑定Ingress服务的工作负载的Service Port"
   type: string
-  label: Config Ingress Service Port
+  label: Service Port
   group: "Ingress基础配置"
