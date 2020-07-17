@@ -11,7 +11,7 @@ data:
       "virtualServer": {
         "frontend": {
           "balance": "{{ .Values.lbmethod }}",
-          "mode": "{{ .Values.mode }}",
+          "mode": {{ .Values.mode }},
           "partition": "{{ .Values.partiton }}",
           "virtualAddress": {
             "bindAddr": "{{ .Values.vs_ip }}",
