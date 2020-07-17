@@ -6,14 +6,14 @@ labels:
   io.rancher.certified: partner
 questions:
 - variable: configname
-  default: "f5 configmap example"
+  default: "f5 configmap name"
   required: true
   description: "设置F5 Configmap名称"
   type: string
   label: Config F5 Configmap Name
   group: "F5负载均衡配置"
 - variable: vsmode
-  default: "Set Virtual Server Mode"
+  default: "http"
   required: true
   description: "设置F5提供负载均衡的Virtual Server模式"
   type: enum
@@ -23,7 +23,7 @@ questions:
   - "tcp"
   - "http"
 - variable: vsip
-  default: "Set Virtual Server IP"
+  default: "192.168.0.100"
   required: true
   description: "设置F5提供负载均衡的Virtual Server IP地址"
   type: string
@@ -69,15 +69,15 @@ questions:
   - "ratio-member"
 - variable: servicename
   default: ""
-  description: "设置工作负载的Service Name"
+  description: "设置需要绑定F5负载均衡服务的工作负载的Service Name"
   type: string
   required: true
   label: Service Name 
-  group: "F5负载均衡配置"
+  group: "工作负载配置"
 - variable: serviceport
   default: ""
-  description: "设置工作负载的Service Port"
+  description: "设置需要绑定F5负载均衡服务的工作负载的Service Port"
   type: string
   required: true
   label: Service Port 
-  group: "F5负载均衡配置"
+  group: "工作负载配置"
