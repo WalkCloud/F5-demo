@@ -69,47 +69,47 @@ questions:
   - "host"
   - "destination-address-affinity"
   - "ssl"  
-- variable: ingress.hosts.host
+- variable: ingresshost
   default: "demo.rancher.com"
   required: true
   description: "设置需要对外访问的ingress域名"
   type: string
   label: Config Ingress Host
   group: "Ingress基础配置"
-- variable: ingress.hosts.path
+- variable: ingresspath
   default: "/"
   description: "设置Ingress访问路径"
   type: string
   label: Config Ingress Path
   group: "Ingress基础配置"
-- variable: ingress.tlsenabled
+- variable: tlsenabled
   default: "false"
   description: "开启Ingress SSL加密"
   type: boolean
   label: Config Ingress SSL
   group: "Ingress基础配置"
-- variable: ingress.tls.secretName
+- variable: secretname
   default: ""
   description: "关联设置Ingress SSL证书信息的Secret"
   type: secret
   label: Config Ingress SSL Secret
-  show_if: "ingress.tlsenabled=true"
+  show_if: "tlsenabled=true"
   group: "Ingress基础配置"
-- variable: ingress.tls.hosts
+- variable: tlshosts
   default: ""
   description: "设置Ingress TLS Host配置"
   type: string
   label: Config Ingress SSL Host
-  show_if: "ingress.tlsenabled=true"
+  show_if: "tlsenabled=true"
   group: "Ingress基础配置"
-- variable: service.serviceName
-  default: "your-service-name"
+- variable: servicename
+  default: ""
   description: "设置代理和负载均衡的Ingress服务名称"
   type: string
   required: true
   label: Config Ingress Service
   group: "Ingress基础配置"
-- variable: service.port
+- variable: serviceport
   default: "80"
   required: true
   description: "设置访问Ingress服务端口"
