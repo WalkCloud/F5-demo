@@ -58,4 +58,3 @@ spec:
             backend:
               serviceName: {{ .Values.servicename }}
               servicePort: {{ .Values.serviceport }}
-{{- end }}
