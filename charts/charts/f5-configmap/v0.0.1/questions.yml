@@ -12,6 +12,16 @@ questions:
   type: string
   label: Config F5 Configmap Name
   group: "F5负载均衡配置"
+- variable: mode
+  default: "Set Virtual Server Mode"
+  required: true
+  description: "设置F5提供负载均衡的Virtual Server模式"
+  type: enum
+  label: Config F5 Virual Server Mode
+  group: "F5负载均衡配置"
+  options:
+  - "tcp"
+  - "http"
 - variable: vs_ip
   default: "Set Virtual Server IP"
   required: true
