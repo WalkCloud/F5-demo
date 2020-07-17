@@ -10,41 +10,29 @@ metadata:
     virtual-server.f5.com/partition: "{{ .Values.Partition }}"
     virtual-server.f5.com/balance: "{{ .Values.Balance }}"
     {{- if (eq .Values.healthprotocol "gateway_icmp") }}
-    virtual-server.f5.com/health: |
-       [
-        {
+    virtual-server.f5.com/health: [{
           "interval": 5,
           "timeout":  16
-        }
-      ]
+    }]
     {{- else if (eq .Values.healthprotocol "tcp") }}
-    virtual-server.f5.com/health: |
-       [
-        {
+    virtual-server.f5.com/health: [{
           "interval": 5,
           "timeout":  16
-        }
-      ]
+    }]
     {{- else if (eq .Values.healthprotocol "http") }}
-    virtual-server.f5.com/health: |
-       [
-        {
+    virtual-server.f5.com/health: [{
           "path":     "/",
           "send":     "HTTP GET /",
           "interval": 5,
           "timeout":  16
-        }
-      ]
+    }]
     {{- else if (eq .Values.healthprotocol "https") }}
-    virtual-server.f5.com/health: |
-       [
-        {
+    virtual-server.f5.com/health: [{
           "path":     "/",
           "send":     "HTTP GET /",
           "interval": 5,
           "timeout":  16
-        }
-      ]
+    }]
     {{- end }}
 spec:
   tls:
