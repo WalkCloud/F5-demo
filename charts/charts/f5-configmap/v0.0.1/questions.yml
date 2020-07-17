@@ -67,3 +67,17 @@ questions:
   - "least-connections-node"
   - "fastest-node"
   - "ratio-member"
+- variable: servicename
+  default: ""
+  description: "设置工作负载的Service Name"
+  type: string
+  required: true
+  label: Service Name 
+  group: "F5负载均衡配置"
+- variable: serviceport
+  default: ""
+  description: "设置工作负载的Service Port"
+  type: string
+  required: true
+  label: Service Port 
+  group: "F5负载均衡配置"
