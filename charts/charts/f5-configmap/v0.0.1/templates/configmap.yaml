@@ -11,11 +11,11 @@ data:
       "virtualServer": {
         "frontend": {
           "balance": "{{ .Values.lbmethod }}",
-          "mode": "{{ .Values.vs_mode }}",
+          "mode": "{{ .Values.vsmode }}",
           "partition": "{{ .Values.partiton }}",
           "virtualAddress": {
-            "bindAddr": "{{ .Values.vs_ip }}",
-            "port": {{ .Valuses.vs_port }}
+            "bindAddr": "{{ .Values.vsip }}",
+            "port": {{ .Valuses.vsport }}
           }
         },
         "backend": {

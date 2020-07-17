@@ -12,7 +12,7 @@ questions:
   type: string
   label: Config F5 Configmap Name
   group: "F5负载均衡配置"
-- variable: vs_mode
+- variable: vsmode
   default: "Set Virtual Server Mode"
   required: true
   description: "设置F5提供负载均衡的Virtual Server模式"
@@ -22,14 +22,14 @@ questions:
   options:
   - "tcp"
   - "http"
-- variable: vs_ip
+- variable: vsip
   default: "Set Virtual Server IP"
   required: true
   description: "设置F5提供负载均衡的Virtual Server IP地址"
   type: string
   label: Config F5 Virual Server IP
   group: "F5负载均衡配置"
-- variable: vs_port
+- variable: vsport
   default: "80"
   required: true
   description: "设置F5提供负载均衡的Virtual Server Port端口"
