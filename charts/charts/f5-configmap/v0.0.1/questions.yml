@@ -30,7 +30,7 @@ questions:
   label: Config F5 Virual Server IP
   group: "F5负载均衡配置"
 - variable: vsport
-  default: "80"
+  default: 80
   required: true
   description: "设置F5提供负载均衡的Virtual Server Port端口"
   type: string
