@@ -15,12 +15,12 @@ data:
           "partition": "{{ .Values.partiton }}",
           "virtualAddress": {
             "bindAddr": "{{ .Values.vsip }}",
-            "port": {{ .Valuses.vsport }}
+            "port": {{ .Values.vsport }}
           }
         },
         "backend": {
           "serviceName": "{{ .Values.servicename }}",
-          "servicePort": {{ .Valuses.serviceport}},
+          "servicePort": {{ .Values.serviceport}},
           {{- if (eq .Values.healthprotocol "gateway_icmp") }}
           "healthMonitors": [{
           "interval": 5,
