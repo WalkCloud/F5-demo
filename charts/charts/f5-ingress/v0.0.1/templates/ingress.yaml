@@ -7,8 +7,8 @@ metadata:
   annotations:
     virtual-server.f5.com/ip: "{{ .Values.vsip }}"
     virtual-server.f5.com/http-port: "{{ .Values.vsport }}"
-    virtual-server.f5.com/partition: "{{ .Values.Partition }}"
-    virtual-server.f5.com/balance: "{{ .Values.Balance }}"
+    virtual-server.f5.com/partition: "{{ .Values.partition }}"
+    virtual-server.f5.com/balance: "{{ .Values.balance }}"
     {{- if (eq .Values.healthprotocol "gateway_icmp") }}
     virtual-server.f5.com/health: '[{ 
       "interval": 5, 
