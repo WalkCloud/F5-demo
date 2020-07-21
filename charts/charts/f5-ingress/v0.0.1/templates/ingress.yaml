@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Values.ingressName }}
+  name: {{ .Values.ingressname }}
   labels:
     f5type: virtual-server
   annotations:
